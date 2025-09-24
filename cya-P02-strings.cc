@@ -22,8 +22,8 @@
 
 int main(int argc, char* argv[]) {
 
-  std::string archivo_entrada = argc[1];
-  std::string archivo_salida = argc[2];
+  std::string archivo_entrada = argv[1];
+  std::string archivo_salida = argv[2];
 
   std::ifstream archivo;
 
