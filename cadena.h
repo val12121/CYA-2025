@@ -51,4 +51,5 @@ void Cadena::Inversa(std::string archivo_salida) {
   for (int i = get_cadena().size() -1 ; i >= 0; i--) {
     archivo << get_cadena().at(i);
   }
+  archivo << "\n";
 }

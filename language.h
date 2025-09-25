@@ -56,6 +56,7 @@ class Language {
       for (int i = 0; i < cadenas_.size(); i++) {
         archivo << cadenas_.at(i).get_cadena() << " ";
       }
+      archivo << "\n";
     }
 
   private:
