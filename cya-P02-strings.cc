@@ -66,10 +66,13 @@ int main(int argc, char *argv[]) {
         break;
       //prefijos
       case 3:
-        
+        lenguaje.Prefijo();
+        lenguaje.Mostrar(archivo_salida);
         break;
       //sufijos
       case 4: 
+        lenguaje.Sufijo();
+        lenguaje.Mostrar(archivo_salida);
         break;
       default:
         break;

@@ -30,6 +30,34 @@ class Language {
       cadena_ori = cadena;
       alfabeto_ = alfabeto;
     }
+    void Prefijo() {
+      cadenas_.clear();
+      std::string acumulado;
+      Cadena cad("&");
+      cadenas_.push_back(cad);
+      for (int i = 0; i < cadena_ori.get_cadena().size(); i++) { 
+        acumulado += cadena_ori.get_cadena().at(i);
+        cadenas_.push_back(acumulado);
+      }
+    }
+    void Sufijo() {
+      cadenas_.clear();
+      std::string acumulado;
+      Cadena cad("&");
+      cadenas_.push_back(cad);
+      for (int i = cadena_ori.get_cadena().size() - 1; i >= 0; i--) {
+        acumulado = cadena_ori.get_cadena().at(i) + acumulado;
+        cadenas_.push_back(acumulado);
+      }
+    }
+
+    void Mostrar(std::string archivo_salida) {
+      std::ofstream archivo(archivo_salida);
+      for (int i = 0; i < cadenas_.size(); i++) {
+        archivo << cadenas_.at(i).get_cadena() << " ";
+      }
+    }
+
   private:
     Cadena cadena_ori;
     std::vector<Cadena> cadenas_;
