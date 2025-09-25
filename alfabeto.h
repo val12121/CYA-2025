@@ -25,6 +25,7 @@
 class Alfabeto {
  public:
   Alfabeto(std::string alfabeto) { alfabeto_ = alfabeto; };
+  Alfabeto() { alfabeto_ = ""; };
   std::string get_alfabeto() { return alfabeto_; }
   void Salida(std::string archivo_salida);
 

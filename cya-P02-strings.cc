@@ -16,8 +16,7 @@
 // Historial de revisiones
 // 16/09/2025 - Creación (primera versióln) del código
 
-#include "alfabeto.h"
-#include "cadena.h"
+#include "language.h"
 
 int main(int argc, char *argv[]) {
   if (argc != 4) {
@@ -49,6 +48,7 @@ int main(int argc, char *argv[]) {
 
       Alfabeto alfabeto (alfabeto_p);
       Cadena cadena(palabra);
+      Language lenguaje(cadena, alfabeto);
 
       switch (opcode)
       {
@@ -62,12 +62,14 @@ int main(int argc, char *argv[]) {
         break;
       //inversa
       case 2: 
+        cadena.Inversa(archivo_salida);
         break;
       //prefijos
       case 3:
+        
         break;
       //sufijos
-      case 5: 
+      case 4: 
         break;
       default:
         break;
