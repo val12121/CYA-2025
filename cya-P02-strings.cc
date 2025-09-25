@@ -20,27 +20,58 @@
 #include "cadena.h"
 
 int main(int argc, char *argv[]) {
+  if (argc != 4) {
+    // Rellenar
+    std::cout << "Holi" << std::endl;
+    return 0;
+  }
+
+  // Recogemos los archivos
   std::string archivo_entrada = argv[1];
   std::string archivo_salida = argv[2];
-
+  int opcode = std::stoi(argv[3]);
+  
   std::string linea;
   std::string palabra;
+  std::string alfabeto_p;
   std::vector<std::string> vector;
-  std::ifstream archivo(archivo_entrada);
-  Cadena cadena1(palabra);
-  Alfabeto alfabeto("falacia");
-  alfabeto.Salida("salida.txt");
 
+  std::ifstream archivo(archivo_entrada);
   if (archivo.is_open()) {
-    while (!archivo.eof()) {  // Mientras no sea el final del archivo
+    while (!archivo.eof()) {
       std::getline(archivo, linea);
       std::stringstream ss(linea);
+      ss >> palabra;
+      ss >> alfabeto_p;
 
-      while (ss >> palabra) {
-        vector.push_back(palabra);
-        5
+      std::cout << palabra << std::endl;
+      std::cout << alfabeto_p << std::endl;
+
+      Alfabeto alfabeto (alfabeto_p);
+      Cadena cadena(palabra);
+
+      switch (opcode)
+      {
+      //alfabeto
+      case 0:
+        alfabeto.Salida(archivo_salida);
+        break;
+      //longitud
+      case 1:
+        cadena.Longitud(archivo_salida);
+        break;
+      //inversa
+      case 2: 
+        break;
+      //prefijos
+      case 3:
+        break;
+      //sufijos
+      case 5: 
+        break;
+      default:
+        break;
       }
-      cadena1.Salida(palabra);
     }
   } else {
     std::cerr << "No se pudo abrir el archivo." << std::endl;

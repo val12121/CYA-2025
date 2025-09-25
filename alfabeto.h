@@ -36,6 +36,11 @@ void Alfabeto::Salida(std::string archivo_salida) {
   std::ofstream archivo(archivo_salida);
   archivo << "{";
   for (int i = 0; i < get_alfabeto().size(); i++) {
-    archivo << get_alfabeto().at(i) << ", ";
+    if (i != get_alfabeto().size() - 1) {
+      archivo << get_alfabeto().at(i) << ", ";
+    } else {
+      archivo << get_alfabeto().at(i) << "}";
+    }
   }
+  archivo << "\n";
 }

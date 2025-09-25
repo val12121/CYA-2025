@@ -25,8 +25,11 @@
 class Cadena {
 public: 
   Cadena(std::string palabra) { palabra_ = palabra; };
+  
   std::string get_cadena() { return palabra_; }
   void Salida(std::string archivo_salida);
+  void Longitud(std::string archivo_salida);
+
 
   private:
   std::string palabra_;
@@ -34,7 +37,10 @@ public:
 
 void Cadena::Salida(std::string archivo_salida) {
   std::ofstream archivo(archivo_salida);
-  for (int i = 0; i < get_cadena().size(); i++) {
-    
-  }
+  std::cout << get_cadena() << std::endl;
+}
+
+void Cadena::Longitud(std::string archivo_salida) {
+  std::ofstream archivo(archivo_salida);
+  archivo << get_cadena().size() << "\n";
 }
