@@ -18,10 +18,11 @@
 
 #include "language.h"
 
+void help();
+
 int main(int argc, char *argv[]) {
   if (argc != 4) {
-    // Rellenar
-    std::cout << "Holi" << std::endl;
+    help();
     return 0;
   }
 
@@ -29,7 +30,7 @@ int main(int argc, char *argv[]) {
   std::string archivo_entrada = argv[1];
   std::string archivo_salida = argv[2];
   int opcode = std::stoi(argv[3]);
-  
+
   std::string linea;
   std::string palabra;
   std::string alfabeto_p;
@@ -46,40 +47,46 @@ int main(int argc, char *argv[]) {
       std::cout << palabra << std::endl;
       std::cout << alfabeto_p << std::endl;
 
-      Alfabeto alfabeto (alfabeto_p);
+      Alfabeto alfabeto(alfabeto_p);
       Cadena cadena(palabra);
       Language lenguaje(cadena, alfabeto);
 
-      switch (opcode)
-      {
-      //alfabeto
-      case 0:
-        alfabeto.Salida(archivo_salida);
-        break;
-      //longitud
-      case 1:
-        cadena.Longitud(archivo_salida);
-        break;
-      //inversa
-      case 2: 
-        cadena.Inversa(archivo_salida);
-        break;
-      //prefijos
-      case 3:
-        lenguaje.Prefijo();
-        lenguaje.Mostrar(archivo_salida);
-        break;
-      //sufijos
-      case 4: 
-        lenguaje.Sufijo();
-        lenguaje.Mostrar(archivo_salida);
-        break;
-      default:
-        break;
+      switch (opcode) {
+        // alfabeto
+        case 0:
+          alfabeto.Salida(archivo_salida);
+          break;
+        // longitud
+        case 1:
+          cadena.Longitud(archivo_salida);
+          break;
+        // inversa
+        case 2:
+          cadena.Inversa(archivo_salida);
+          break;
+        // prefijos
+        case 3:
+          lenguaje.Prefijo();
+          lenguaje.Mostrar(archivo_salida);
+          break;
+        // sufijos
+        case 4:
+          lenguaje.Sufijo();
+          lenguaje.Mostrar(archivo_salida);
+          break;
+        default:
+          help();
+          break;
       }
     }
   } else {
     std::cerr << "No se pudo abrir el archivo." << std::endl;
     return 1;
   }
+}
+
+void help() {
+  std::cout << "Modo de empleo: \n ./p02_strings filein.txt fileout.txt opcode "
+               "\n Para más información, pruebe: \n ./p02_strings --help"
+            << std::endl;
 }

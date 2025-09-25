@@ -7,7 +7,7 @@
 // Autor: Camila Valentina Alonso Yepez
 // Correo: alu0101548999@ull.edu.es
 // Fecha: 24/09/2025
-// Archivo cya-P02-strings.cc: programa cliente.
+// Archivo alfabeto.h: programa cliente.
 // Contiene la función main del proyecto que usa las clases X e Y
 // para ... (indicar brevemente el objetivo)
 // Referencias:
