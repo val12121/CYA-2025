@@ -16,19 +16,32 @@
 // Historial de revisiones
 // 16/09/2025 - Creación (primera versióln) del código
 
-#include <iostream>
-#include <math>
-#include <fstream>
+#include "alfabeto.h"
+#include "cadena.h"
 
-int main(int argc, char* argv[]) {
-
+int main(int argc, char *argv[]) {
   std::string archivo_entrada = argv[1];
   std::string archivo_salida = argv[2];
 
-  std::ifstream archivo;
+  std::string linea;
+  std::string palabra;
+  std::vector<std::string> vector;
+  std::ifstream archivo(archivo_entrada);
+  Cadena cadena1(palabra);
+  Alfabeto alfabeto("falacia");
+  alfabeto.Salida("salida.txt");
 
-  if (archivo.open(archivo_entrada)) {
-    //Todo bien
+  if (archivo.is_open()) {
+    while (!archivo.eof()) {  // Mientras no sea el final del archivo
+      std::getline(archivo, linea);
+      std::stringstream ss(linea);
+
+      while (ss >> palabra) {
+        vector.push_back(palabra);
+        5
+      }
+      cadena1.Salida(palabra);
+    }
   } else {
     std::cerr << "No se pudo abrir el archivo." << std::endl;
     return 1;

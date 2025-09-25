@@ -1,0 +1,40 @@
+// Universidad de La Laguna
+// Escuela Superior de Ingeniería y Tecnología
+// Grado en Ingeniería Informática
+// Asignatura: Computabilidad y Algoritmia
+// Curso: 2º
+// Práctica 2: Cadenas y lenguajes
+// Autor: Camila Valentina Alonso Yepez
+// Correo: alu0101548999@ull.edu.es
+// Fecha: 24/09/2025
+// Archivo cya-P02-strings.cc: programa cliente.
+// Contiene la función main del proyecto que usa las clases X e Y
+// para ... (indicar brevemente el objetivo)
+// Referencias:
+// Enlaces de interés
+//
+// Historial de revisiones
+// 16/09/2025 - Creación (primera versióln) del código
+
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <vector>
+
+//CLASE CADENA
+class Cadena {
+public: 
+  Cadena(std::string palabra) { palabra_ = palabra; };
+  std::string get_cadena() { return palabra_; }
+  void Salida(std::string archivo_salida);
+
+  private:
+  std::string palabra_;
+};
+
+void Cadena::Salida(std::string archivo_salida) {
+  std::ofstream archivo(archivo_salida);
+  for (int i = 0; i < get_cadena().size(); i++) {
+    
+  }
+}
